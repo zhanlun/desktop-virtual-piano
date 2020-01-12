@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css">
+	<title>Desktop Virtual Piano</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Desktop Virtual Piano</h1>
+		<h2>(Playable on desktop browser)</h2>
+		<ul id="piano">
+			<li data-note="C4" class="key">
+				<div data-note="C#4" class="black-key">S</div>
+				Z
+			</li>
+			<li data-note="D4" class="key">
+				<div data-note="D#4" class="black-key">D</div>
+				X
+			</li>
+			<li data-note="E4" class="key">
+				C
+			</li>
+			<li data-note="F4" class="key">
+				<div data-note="F#4" class="black-key">G</div>
+				V
+			</li>
+			<li data-note="G4" class="key">
+				<div data-note="G#4" class="black-key">H</div>
+				B
+			</li>
+			<li data-note="A4" class="key">
+				<div data-note="A#4" class="black-key">J</div>
+				N
+			</li>
+			<li data-note="B4" class="key">
+				M
+			</li>
+			<li data-note="C5" class="key">
+				<div data-note="C#5" class="black-key">2</div>
+				Q
+			</li>
+			<li data-note="D5" class="key">
+				<div data-note="D#5" class="black-key">3</div>
+				W
+			</li>
+			<li data-note="E5" class="key">
+				E
+			</li>
+			<li data-note="F5" class="key">
+				<div data-note="F#5" class="black-key">5</div>
+				R
+			</li>
+			<li data-note="G5" class="key">
+				<div data-note="G#5" class="black-key">6</div>
+				T
+			</li>
+			<li data-note="A5" class="key">
+				<div data-note="A#5" class="black-key">7</div>
+				Y
+			</li>
+			<li data-note="B5" class="key">
+				U
+			</li>
+			<li data-note="C6" class="key">
+				I
+			</li>
+		</ul>
+		<div class="sustain">
+			<h3>sustain</h3>
+			<label class="switch">
+				<input type="checkbox" id="pedal" checked>
+				<span class="slider"></span>
+			</label>
+		</div>
+	</div>
+		
+		<script src="https://tonejs.github.io/build/Tone.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
