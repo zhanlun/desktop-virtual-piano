@@ -1,22 +1,30 @@
-let instrument;
+const piano = document.getElementById("piano");
 
-const pianoSample = new Tone.Sampler({
-	'C4': 'sounds/c4.mp3',	
-	'E4': 'sounds/e4.mp3',	
-	'A4': 'sounds/a4.mp3',
-	'B4': 'sounds/b4.mp3',
-	'C5': 'sounds/c5.mp3',	
-	'E5': 'sounds/e5.mp3',	
-	'G5': 'sounds/g5.mp3',
-	'A5': 'sounds/a5.mp3',
-});
+
+let instrument;
+let pianoSample;
+
+async function loadPianoSample() {
+	pianoSample = await new Tone.Sampler({
+		'C4': 'sounds/c4.mp3',	
+		'E4': 'sounds/e4.mp3',	
+		'A4': 'sounds/a4.mp3',
+		'B4': 'sounds/b4.mp3',
+		'C5': 'sounds/c5.mp3',	
+		'E5': 'sounds/e5.mp3',	
+		'G5': 'sounds/g5.mp3',
+		'A5': 'sounds/a5.mp3',
+	});
+	instrument = pianoSample;
+	instrument.toMaster();
+	piano.style.display = 'flex';
+	document.querySelector('.loading').style.display = 'none';
+};
 
 // const synth = new Tone.Synth();
 // synth.oscillator.type = "sine";
 
-instrument = pianoSample;
-instrument.toMaster();
-
+loadPianoSample();
 
 
 const keyHoldingList = {
@@ -74,7 +82,6 @@ const keyPitch = {
 	'u': 'B5',
 	'i': 'C6'
 }
-const piano = document.getElementById("piano");
 
 piano.addEventListener("mousedown", e => {
   // fires off a note continously until trigger is released
