@@ -85,25 +85,29 @@ const keyPitch = {
 
 piano.addEventListener("mousedown", e => {
   // fires off a note continously until trigger is released
-  instrument.triggerAttack(e.target.dataset.note);
   e.target.style.backgroundColor = e.target.nodeName === 'LI' ? '#ccc' : '#aaa';
+  instrument.triggerAttack(e.target.dataset.note);
 });
+// sustain pedal
+let sustain = pedal.checked;
+const pedal = document.querySelector('#pedal');
 
 piano.addEventListener("mouseup", e => {
   // stops the trigger
-  instrument.triggerRelease(e.target.dataset.note);
   e.target.style.backgroundColor = e.target.nodeName === 'LI' ? '#fff' : '#000';
+  	if (!sustain) {
+		instrument.triggerRelease(e.target.dataset.note);
+	}
 });
 
 piano.addEventListener("mouseout", e => {
-  // stops the trigger
-  instrument.triggerRelease(e.target.dataset.note);
-  e.target.style.backgroundColor = e.target.nodeName === 'LI' ? '#fff' : '#000';
+	// stops the trigger
+	e.target.style.backgroundColor = e.target.nodeName === 'LI' ? '#fff' : '#000';
+	if (!sustain) {
+		instrument.triggerRelease(e.target.dataset.note);
+	}
 });
 
-// sustain pedal
-const pedal = document.querySelector('#pedal');
-let sustain = pedal.checked;
 
 pedal.addEventListener('click', () => {
 	sustain = pedal.checked;
