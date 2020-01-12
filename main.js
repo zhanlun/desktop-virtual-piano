@@ -85,6 +85,7 @@ const keyPitch = {
 
 // sustain pedal
 const pedal = document.querySelector('#pedal');
+
 let sustain = pedal.checked;
 
 piano.addEventListener("mousedown", e => {
